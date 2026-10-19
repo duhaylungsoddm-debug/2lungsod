@@ -161,6 +161,21 @@
         <p>Sapatosan ni Tekyo is dedicated to bringing you the best footwear selections, combining style, comfort, and durability to fit your everyday lifestyle.</p>
         <p>Founded with a passion for quality shoes, our mission is to make sure every step you take looks great and feels even better. Thank you for choosing us as your trusted footwear partner!</p>
     </main>
+     <script>
+        function validationForm(event) {
+            event.preventDefault();
+            const username = document.getElementById("pa").value;
+            const password = document.getElementById("chups").value;
+
+            if (username === "pa" && password === "chups") {
+                window.location.href = "home.html";
+                return false;
+            } else {
+                alert("Invalid username or password");
+                return false;
+            }
+        }
+    </script>
 
 </body>
 </html>
