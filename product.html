@@ -338,6 +338,21 @@
 
         </div>
     </main>
+     <script>
+        function validationForm(event) {
+            event.preventDefault();
+            const username = document.getElementById("pa").value;
+            const password = document.getElementById("chups").value;
+
+            if (username === "pa" && password === "chups") {
+                window.location.href = "home.html";
+                return false;
+            } else {
+                alert("Invalid username or password");
+                return false;
+            }
+        }
+    </script>
 
 </body>
 </html>
