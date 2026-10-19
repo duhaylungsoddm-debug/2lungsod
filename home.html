@@ -178,6 +178,21 @@
         <h1>Welcome sa Sapatosan ni Tekyo!</h1>
         <p>Don't just wear shoes, wear confidence. Shop the latest collection and enjoy free delivery.</p>
     </main>
+     <script>
+        function validationForm(event) {
+            event.preventDefault();
+            const username = document.getElementById("pa").value;
+            const password = document.getElementById("chups").value;
+
+            if (username === "pa" && password === "chups") {
+                window.location.href = "home.html";
+                return false;
+            } else {
+                alert("Invalid username or password");
+                return false;
+            }
+        }
+    </script>
 
 </body>
 </html>
