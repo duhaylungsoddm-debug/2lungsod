@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sapatosan ni Tekyo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .login-container {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('shoes.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 40px 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            display: block;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 16px;
+            color: white;
+            margin-bottom: 6px;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0,123,255,0.5);
+        }
+
+        .input-group input.input-error {
+            border-color: #e74c3c;
+            background-color: #fde8e8;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .input-group label {
+                font-size: 14px;
+            }
+
+            .input-group input {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .submit-btn {
+                padding: 10px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="M.mp4" type="video/mp4">
+    </video>
+
+    <div class="login-container">
+        <form id="loginForm" onsubmit="return validationForm(event)">
+            <span class="subtitle">Please Sign in here!</span>
+
+            <div class="input-group">
+                <label for="pa">Username</label>
+                <input type="text" id="pa" placeholder="Enter ur Username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="chups">Password</label>
+                <input type="password" id="chups" placeholder="Enter ur Password" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Logout na</button>
+        </form>
+    </div>
+
+    <script>
+        function validationForm(event) {
+            event.preventDefault();
+            const username = document.getElementById("pa").value;
+            const password = document.getElementById("chups").value;
+
+            if (username === "pa" && password === "chups") {
+                window.location.href = "home.html";
+                return false;
+            } else {
+                alert("Invalid username or password");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>
 
