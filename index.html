@@ -103,23 +103,25 @@
         }
         
 .logout-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    width: 100%;
     background: #dc3545;
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 12px;
     border-radius: 6px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    z-index: 1000;
+    margin-top: 12px;
+    transition: background 0.3s;
 }
 
 .logout-btn:hover {
     background: #a71d2a;
 }
+
+
+
 
         @media (max-width: 480px) {
             .login-container {
@@ -153,24 +155,40 @@
         <source src="M.mp4" type="video/mp4">
     </video>
 
-    <div class="login-container">
-        <form id="loginForm" onsubmit="return validationForm(event)">
-            <span class="subtitle">Please Sign in here!</span>
+    
+<div class="login-container">
+    <form id="loginForm" onsubmit="return validationForm(event)">
+        <span class="subtitle">Please Sign in here!</span>
 
-            <div class="input-group">
-                <label for="pa">Username</label>
-                <input type="text" id="pa" placeholder="Enter ur Username" required>
-            </div>
+        <div class="input-group">
+            <label for="pa">Username</label>
+            <input type="text" id="pa"
+                   placeholder="Enter ur Username" required>
+        </div>
 
-            <div class="input-group">
-                <label for="chups">Password</label>
-                <input type="password" id="chups" placeholder="Enter ur Password" required>
-            </div>
+        <div class="input-group">
+            <label for="chups">Password</label>
+            <input type="password" id="chups"
+                   placeholder="Enter ur Password" required>
+        </div>
 
-            <button> type="submit" class="submit-btn">Log in na</button>
-            <button class="logout-btn" onclick="logout()">Log Out</button>
-        </form>
-    </div>
+        <button type="submit" class="submit-btn">
+            Log in na
+        </button>
+
+        <button type="button" class="logout-btn" onclick="logout()">
+            Log Out
+        </button>
+    </form>
+</div>
+
+<script>
+    function logout() {
+        if (confirm("Are you sure you want to log out?")) {
+            window.location.href = "index.html";
+        }
+    }
+</script>
 
     <script>
         function validationForm(event) {
